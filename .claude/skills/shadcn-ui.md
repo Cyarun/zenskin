@@ -1,16 +1,16 @@
-# shadcn/ui & Theming Skill
+# shadcn/ui & ZenSkin Design System
 
-Comprehensive toolkit for building beautiful, accessible UI components with shadcn/ui and custom themes.
+Comprehensive toolkit for building the ZenSkin.in premium skincare website with shadcn/ui components, following the aesthetic principles from ZenSkin.com.
 
-## When to Use
+## Design Philosophy
 
-Use this skill when:
-- Building UI components with shadcn/ui
-- Implementing dark/light mode theming
-- Creating custom color schemes (e.g., ZenSkin brand)
-- Using tweakcn for theme customization
-- Building accessible, consistent interfaces
-- Working with React Native components (via react-native-reusables)
+ZenSkin follows a **premium Korean skincare aesthetic**:
+- Minimal, clean layouts with generous whitespace
+- Luxury feel through serif + sans-serif font pairing
+- Soft, muted color palette (whites, creams, grays)
+- Elegant gold accents for CTAs
+- Image-forward product presentation
+- Smooth transitions and subtle hover effects
 
 ## MCP Server Available
 
@@ -20,291 +20,298 @@ The shadcn-ui MCP server provides:
 - Multi-framework support (React, React Native, Vue, Svelte)
 - Component documentation lookup
 
-## shadcn/ui Overview
+---
 
-shadcn/ui is NOT a component library - it's a collection of re-usable components you copy into your project. Benefits:
-- Full ownership of component code
-- Customize everything
-- No runtime dependencies
-- Built on Radix UI primitives
-- Tailwind CSS styling
+## ZenSkin.in Color Palette
 
-## Installation
+Based on ZenSkin.com analysis, adapted for white/cream/gray theme:
 
-### Next.js Setup
+### Primary Colors
 
-```bash
-# Initialize shadcn/ui in Next.js project
-npx shadcn@latest init
+| Name | Hex | HSL | Usage |
+|------|-----|-----|-------|
+| **Pure White** | `#FFFFFF` | `0 0% 100%` | Primary background |
+| **Snow White** | `#F7F9FA` | `200 20% 98%` | Section backgrounds |
+| **Warm Cream** | `#FFFCF7` | `40 100% 98%` | Warm section accents |
+| **Light Gray** | `#F0F0F0` | `0 0% 94%` | Subtle dividers |
+| **Soft Gray** | `#E8E8E8` | `0 0% 91%` | Muted backgrounds |
 
-# Configuration prompts:
-# - Style: Default or New York
-# - Base color: Slate, Gray, Zinc, Neutral, Stone
-# - CSS variables: Yes (recommended)
-# - tailwind.config location
-# - components.json location
-```
+### Text Colors
 
-### Add Components
+| Name | Hex | HSL | Usage |
+|------|-----|-----|-------|
+| **Rich Black** | `#212121` | `0 0% 13%` | Body text |
+| **Pure Black** | `#000000` | `0 0% 0%` | Headlines |
+| **Medium Gray** | `#646464` | `0 0% 39%` | Secondary text |
+| **Muted Gray** | `#9A9A9A` | `0 0% 60%` | Placeholder, hints |
 
-```bash
-# Add individual components
-npx shadcn@latest add button
-npx shadcn@latest add card
-npx shadcn@latest add input
-npx shadcn@latest add dialog
+### Accent Colors
 
-# Add multiple at once
-npx shadcn@latest add button card input form
+| Name | Hex | HSL | Usage |
+|------|-----|-----|-------|
+| **Champagne Gold** | `#AB8C52` | `39 36% 50%` | Primary CTA, accents |
+| **Soft Gold** | `rgba(171,140,82,0.05)` | - | Gold tint backgrounds |
+| **Sage Green** | `#B5CAAC` | `100 25% 73%` | Trust badges, wellness |
+| **Soft Pink** | `#F9DEE5` | `344 66% 92%` | Feminine accents |
+| **Warm Peach** | `#FFF0DB` | `36 100% 93%` | Highlight sections |
 
-# Add all components
-npx shadcn@latest add --all
-```
+### Semantic Colors
 
-## Essential Components for E-commerce
+| Name | Hex | Usage |
+|------|-----|-------|
+| **Border** | `#D4D4D4` | Card borders, dividers |
+| **Input Border** | `#E5E5E5` | Form field borders |
+| **Destructive** | `#D20000` | Error states |
+| **Success** | `#B5CAAC` | Success states |
 
-### Core UI Components
+---
 
-```bash
-# Navigation & Layout
-npx shadcn@latest add navigation-menu
-npx shadcn@latest add sheet        # Mobile sidebar
-npx shadcn@latest add dropdown-menu
-npx shadcn@latest add breadcrumb
+## Typography System
 
-# Forms & Input
-npx shadcn@latest add form
-npx shadcn@latest add input
-npx shadcn@latest add select
-npx shadcn@latest add checkbox
-npx shadcn@latest add radio-group
-npx shadcn@latest add textarea
-
-# Feedback
-npx shadcn@latest add toast
-npx shadcn@latest add alert
-npx shadcn@latest add skeleton
-npx shadcn@latest add progress
-
-# Data Display
-npx shadcn@latest add card
-npx shadcn@latest add table
-npx shadcn@latest add badge
-npx shadcn@latest add avatar
-
-# Overlay
-npx shadcn@latest add dialog
-npx shadcn@latest add drawer
-npx shadcn@latest add popover
-npx shadcn@latest add tooltip
-```
-
-## Theming System
-
-### CSS Variables Structure
-
-shadcn/ui uses CSS variables for theming in `globals.css`:
+### Font Families
 
 ```css
+/* Primary - Body text */
+--font-sans: 'Figtree', system-ui, sans-serif;
+
+/* Secondary - Headlines, elegance */
+--font-serif: 'Amiri', 'Times New Roman', serif;
+
+/* Accent - Subheadings */
+--font-display: 'GT Standard', 'Figtree', sans-serif;
+```
+
+### Font Scale
+
+| Element | Size | Weight | Font |
+|---------|------|--------|------|
+| Hero Headline | `45-47px` / `2.9rem` | 400 | Amiri (serif) |
+| Section Heading | `33px` / `2rem` | 400 | Amiri (serif) |
+| Subheading | `22px` / `1.375rem` | 500 | Figtree |
+| Body Large | `16px` / `1rem` | 400 | Figtree |
+| Body | `15px` / `0.9375rem` | 400 | Figtree |
+| Small | `13px` / `0.8125rem` | 400 | Figtree |
+| Caption | `12px` / `0.75rem` | 400 | Figtree |
+| Navigation | `13px` / `0.8125rem` | 500 | Figtree, uppercase |
+
+### Line Heights
+
+- Headlines: `1.2`
+- Body text: `1.6`
+- Navigation: `1`
+
+---
+
+## CSS Variables for globals.css
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Figtree:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
-    /* ZenSkin Light Theme */
-    --background: 60 9% 98%;       /* Warm off-white */
-    --foreground: 20 14% 15%;      /* Rich dark brown */
+    /* ZenSkin Light Theme - White/Cream/Gray */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 15%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 15%;
+    --popover-foreground: 0 0% 13%;
 
-    /* Primary - Sage Green (Brand) */
-    --primary: 150 30% 45%;
+    /* Primary - Champagne Gold */
+    --primary: 39 36% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Warm Terracotta */
-    --secondary: 15 50% 60%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Snow White sections */
+    --secondary: 200 20% 98%;
+    --secondary-foreground: 0 0% 13%;
 
-    /* Accent - Soft Gold */
-    --accent: 45 70% 55%;
-    --accent-foreground: 20 14% 15%;
+    /* Accent - Warm Cream */
+    --accent: 40 100% 98%;
+    --accent-foreground: 0 0% 13%;
 
-    /* Muted - Soft backgrounds */
-    --muted: 60 5% 92%;
-    --muted-foreground: 20 10% 40%;
+    /* Muted - Soft Gray */
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 39%;
 
-    /* Destructive - Error states */
-    --destructive: 0 84% 60%;
+    /* Destructive */
+    --destructive: 0 100% 41%;
     --destructive-foreground: 0 0% 100%;
 
     /* Border & Input */
-    --border: 20 10% 85%;
-    --input: 20 10% 85%;
-    --ring: 150 30% 45%;
+    --border: 0 0% 83%;
+    --input: 0 0% 90%;
+    --ring: 39 36% 50%;
 
-    /* Radius */
-    --radius: 0.75rem;
+    /* Radius - Slightly rounded for elegance */
+    --radius: 0.5rem;
+
+    /* Custom ZenSkin tokens */
+    --gold: 39 36% 50%;
+    --gold-light: 39 36% 50% / 0.05;
+    --sage: 100 25% 73%;
+    --cream: 40 100% 98%;
+    --snow: 200 20% 98%;
   }
 
   .dark {
-    /* ZenSkin Dark Theme */
-    --background: 20 14% 10%;
-    --foreground: 60 9% 95%;
+    /* ZenSkin Dark Theme - Inverted elegance */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 20 14% 12%;
-    --card-foreground: 60 9% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 20 14% 12%;
-    --popover-foreground: 60 9% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 150 35% 50%;
-    --primary-foreground: 20 14% 10%;
+    --primary: 39 40% 55%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 15 45% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
 
-    --accent: 45 65% 50%;
-    --accent-foreground: 20 14% 10%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
 
-    --muted: 20 14% 18%;
-    --muted-foreground: 60 5% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 20 14% 20%;
-    --input: 20 14% 20%;
-    --ring: 150 35% 50%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 39 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
   }
 }
 ```
 
-### Theme Provider Setup
+---
 
-```tsx
-// components/theme-provider.tsx
-'use client'
+## Layout Patterns from ZenSkin.com
 
-import * as React from 'react'
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { type ThemeProviderProps } from 'next-themes/dist/types'
+### Homepage Sections (in order)
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
-}
-```
+1. **Hero Section** - Full-width image with overlay text
+2. **Tagline** - Centered text on white background
+3. **Product Carousel** - Tabbed categories (Repair/Protect)
+4. **Feature Banner** - 50/50 image + text split
+5. **Category Grid** - 3-column image links
+6. **Lifestyle Section** - Large image + 2 product cards
+7. **Featured Product** - Single product highlight
+8. **Testimonials** - Horizontal scrolling carousel
+9. **Trust Badges** - 3-column icons
+10. **Footer** - 4-column layout
 
-```tsx
-// app/layout.tsx
-import { ThemeProvider } from '@/components/theme-provider'
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
-}
-```
-
-### Theme Toggle Component
-
-```tsx
-// components/theme-toggle.tsx
-'use client'
-
-import * as React from 'react'
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-
-export function ThemeToggle() {
-  const { setTheme } = useTheme()
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-```
-
-## tweakcn Integration
-
-tweakcn is a visual theme editor for shadcn/ui themes.
-
-### Using tweakcn
-
-1. Visit https://tweakcn.com
-2. Customize colors visually
-3. Export CSS variables
-4. Paste into your `globals.css`
-
-### Custom Theme from tweakcn
+### Spacing Scale
 
 ```css
-/* Example: ZenSkin wellness theme generated with tweakcn */
-@layer base {
-  :root {
-    /* Copy exported variables from tweakcn here */
-    --background: 60 9% 98%;
-    --foreground: 20 14% 15%;
-    /* ... rest of variables */
-  }
-}
+/* Consistent spacing based on 4px grid */
+--space-1: 0.25rem;   /* 4px */
+--space-2: 0.5rem;    /* 8px */
+--space-3: 0.75rem;   /* 12px */
+--space-4: 1rem;      /* 16px */
+--space-6: 1.5rem;    /* 24px */
+--space-8: 2rem;      /* 32px */
+--space-12: 3rem;     /* 48px */
+--space-16: 4rem;     /* 64px */
+--space-24: 6rem;     /* 96px */
+--space-32: 8rem;     /* 128px */
 ```
+
+### Container Widths
+
+```css
+--container-sm: 640px;
+--container-md: 768px;
+--container-lg: 1024px;
+--container-xl: 1280px;
+--container-2xl: 1440px;
+```
+
+---
 
 ## Component Patterns
 
-### Product Card
+### Hero Section
+
+```tsx
+// components/hero-section.tsx
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+
+interface HeroProps {
+  title: string
+  backgroundImage: string
+  ctaText: string
+  ctaLink: string
+}
+
+export function HeroSection({ title, backgroundImage, ctaText, ctaLink }: HeroProps) {
+  return (
+    <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
+      <Image
+        src={backgroundImage}
+        alt=""
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl max-w-4xl leading-tight">
+          {title}
+        </h1>
+        <Button
+          asChild
+          variant="outline"
+          className="mt-8 border-white text-white hover:bg-white hover:text-foreground px-8 py-6 text-base"
+        >
+          <Link href={ctaLink}>{ctaText}</Link>
+        </Button>
+      </div>
+    </section>
+  )
+}
+```
+
+### Product Card (ZenSkin Style)
 
 ```tsx
 // components/product-card.tsx
+'use client'
+
 import Image from 'next/image'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
+import { useState } from 'react'
+import { cn } from '@/lib/utils'
 
 interface ProductCardProps {
   name: string
   price: number
   originalPrice?: number
   image: string
-  category: string
-  inStock: boolean
+  hoverImage?: string
+  href: string
+  currency?: string
 }
 
 export function ProductCard({
@@ -312,130 +319,146 @@ export function ProductCard({
   price,
   originalPrice,
   image,
-  category,
-  inStock
+  hoverImage,
+  href,
+  currency = '₹'
 }: ProductCardProps) {
-  const discount = originalPrice
-    ? Math.round((1 - price / originalPrice) * 100)
-    : 0
+  const [isHovered, setIsHovered] = useState(false)
+  const hasDiscount = originalPrice && originalPrice > price
 
   return (
-    <Card className="group overflow-hidden">
-      <div className="relative aspect-square overflow-hidden">
+    <Link
+      href={href}
+      className="group block"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Image Container */}
+      <div className="relative aspect-square overflow-hidden bg-snow mb-4">
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover transition-transform group-hover:scale-105"
+          className={cn(
+            'object-cover transition-opacity duration-500',
+            isHovered && hoverImage ? 'opacity-0' : 'opacity-100'
+          )}
         />
-        {discount > 0 && (
-          <Badge className="absolute top-2 right-2 bg-destructive">
-            -{discount}%
-          </Badge>
-        )}
-        {!inStock && (
-          <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-            <Badge variant="secondary">Out of Stock</Badge>
-          </div>
+        {hoverImage && (
+          <Image
+            src={hoverImage}
+            alt={name}
+            fill
+            className={cn(
+              'object-cover transition-opacity duration-500',
+              isHovered ? 'opacity-100' : 'opacity-0'
+            )}
+          />
         )}
       </div>
-      <CardContent className="p-4">
-        <p className="text-sm text-muted-foreground">{category}</p>
-        <h3 className="font-semibold line-clamp-2">{name}</h3>
-        <div className="flex items-center gap-2 mt-2">
-          <span className="text-lg font-bold">₹{price}</span>
-          {originalPrice && (
+
+      {/* Product Info */}
+      <div className="text-center">
+        <h3 className="text-sm font-medium text-foreground mb-2 line-clamp-2">
+          {name}
+        </h3>
+        <div className="flex items-center justify-center gap-2">
+          <span className="text-base font-medium">
+            {currency} {price.toLocaleString('en-IN')}
+          </span>
+          {hasDiscount && (
             <span className="text-sm text-muted-foreground line-through">
-              ₹{originalPrice}
+              {currency} {originalPrice.toLocaleString('en-IN')}
             </span>
           )}
         </div>
-      </CardContent>
-      <CardFooter className="p-4 pt-0">
-        <Button className="w-full" disabled={!inStock}>
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </Link>
   )
 }
 ```
 
-### Navigation Header
+### Navigation Header (ZenSkin Style)
 
 ```tsx
 // components/header.tsx
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, User, Menu, Search } from 'lucide-react'
+import Image from 'next/image'
+import { Search, User, ShoppingBag, Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Badge } from '@/components/ui/badge'
-import { ThemeToggle } from '@/components/theme-toggle'
+
+const navLinks = [
+  { label: 'HOME', href: '/' },
+  { label: 'SHOP', href: '/collections/all' },
+  { label: 'CONTACT', href: '/contact' },
+]
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center gap-4">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-border">
+      <div className="container flex h-16 items-center justify-between">
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
-            <nav className="flex flex-col gap-4">
-              <Link href="/products">All Products</Link>
-              <Link href="/category/gut-health">Gut Health</Link>
-              <Link href="/category/skin-care">Skin Care</Link>
-              <Link href="/about">About</Link>
+          <SheetContent side="left" className="w-[300px]">
+            <nav className="flex flex-col gap-6 mt-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-lg font-medium tracking-wide"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </SheetContent>
         </Sheet>
 
         {/* Logo */}
-        <Link href="/" className="font-bold text-xl">
-          ZenSkin
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+          <Image
+            src="/logo.svg"
+            alt="ZenSkin"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+          />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 ml-6">
-          <Link href="/products" className="text-sm font-medium hover:text-primary">
-            Products
-          </Link>
-          <Link href="/category/gut-health" className="text-sm font-medium hover:text-primary">
-            Gut Health
-          </Link>
-          <Link href="/category/skin-care" className="text-sm font-medium hover:text-primary">
-            Skin Care
-          </Link>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 ml-12">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[13px] font-medium tracking-wider hover:text-primary transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
-        {/* Search */}
-        <div className="flex-1 max-w-md mx-4 hidden sm:block">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search products..."
-              className="pl-10"
-            />
-          </div>
-        </div>
-
         {/* Actions */}
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon" className="hidden sm:flex">
+            <Search className="h-5 w-5" />
+            <span className="sr-only">Search</span>
+          </Button>
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
+            <span className="sr-only">Account</span>
           </Button>
           <Button variant="ghost" size="icon" className="relative">
-            <ShoppingCart className="h-5 w-5" />
-            <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
-              3
-            </Badge>
+            <ShoppingBag className="h-5 w-5" />
+            <span className="sr-only">Cart</span>
           </Button>
         </div>
       </div>
@@ -444,251 +467,320 @@ export function Header() {
 }
 ```
 
-### Form with Validation
+### Testimonial Carousel
 
 ```tsx
-// components/checkout-form.tsx
+// components/testimonials.tsx
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import * as z from 'zod'
+import { useRef } from 'react'
+import { ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().regex(/^[6-9]\d{9}$/, 'Invalid Indian phone number'),
-  address: z.string().min(10, 'Please enter a complete address'),
-  city: z.string().min(2, 'City is required'),
-  state: z.string().min(2, 'State is required'),
-  pincode: z.string().regex(/^\d{6}$/, 'Invalid PIN code'),
-})
+interface Testimonial {
+  quote: string
+  author: string
+}
 
-export function CheckoutForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      state: '',
-      pincode: '',
-    },
-  })
+const testimonials: Testimonial[] = [
+  {
+    quote: "ZenSkin's products have transformed my skin. The natural glow is undeniable!",
+    author: "Priya"
+  },
+  {
+    quote: "Finally found skincare that works. My skin feels plump, nourished, and radiant.",
+    author: "Ananya"
+  },
+  {
+    quote: "The best investment for my skin. Lightweight, effective, and luxurious.",
+    author: "Meera"
+  },
+]
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+export function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const scrollNext = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' })
+    }
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Full Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="John Doe" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl>
-                  <Input placeholder="9876543210" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+    <section className="py-16 md:py-24 bg-snow">
+      <div className="container">
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+          >
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className="min-w-[300px] md:min-w-[400px] snap-center"
+              >
+                <blockquote className="relative">
+                  <span className="text-6xl text-primary/20 font-serif absolute -top-4 -left-2">
+                    "
+                  </span>
+                  <p className="text-lg leading-relaxed pl-8 pr-4">
+                    {item.quote}
+                  </p>
+                </blockquote>
+                <p className="mt-4 pl-8 font-medium text-muted-foreground">
+                  {item.author}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-0 top-1/2 -translate-y-1/2"
+            onClick={scrollNext}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
         </div>
-
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="john@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="address"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Address</FormLabel>
-              <FormControl>
-                <Input placeholder="House no, Street, Landmark" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          <FormField
-            control={form.control}
-            name="city"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>City</FormLabel>
-                <FormControl>
-                  <Input placeholder="Mumbai" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="state"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>State</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select state" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="maharashtra">Maharashtra</SelectItem>
-                    <SelectItem value="karnataka">Karnataka</SelectItem>
-                    <SelectItem value="delhi">Delhi</SelectItem>
-                    {/* Add more states */}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="pincode"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>PIN Code</FormLabel>
-                <FormControl>
-                  <Input placeholder="400001" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        <Button type="submit" className="w-full">
-          Continue to Payment
-        </Button>
-      </form>
-    </Form>
+      </div>
+    </section>
   )
 }
 ```
 
-## React Native (react-native-reusables)
-
-For React Native apps, use react-native-reusables which provides shadcn/ui-style components:
-
-### Installation
-
-```bash
-# Install react-native-reusables
-npx @react-native-reusables/cli init
-
-# Add components
-npx @react-native-reusables/cli add button
-npx @react-native-reusables/cli add card
-npx @react-native-reusables/cli add input
-```
-
-### Usage in Expo
+### Trust Badges Section
 
 ```tsx
-// app/(tabs)/index.tsx
-import { View } from 'react-native'
-import { Button } from '~/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
-import { Text } from '~/components/ui/text'
+// components/trust-badges.tsx
+import { Leaf, Heart, Sparkles } from 'lucide-react'
 
-export default function HomeScreen() {
+const badges = [
+  {
+    icon: Sparkles,
+    title: 'Science of Serenity',
+    description: 'Combining skincare science with a serene approach to beauty.',
+  },
+  {
+    icon: Heart,
+    title: 'Cruelty-Free',
+    description: 'No animal testing at any stage of production.',
+  },
+  {
+    icon: Leaf,
+    title: 'Fragrance-Free',
+    description: 'All products are free of artificial fragrance.',
+  },
+]
+
+export function TrustBadges() {
   return (
-    <View className="flex-1 p-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>Welcome to ZenSkin</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Text>Your gut-to-skin wellness journey starts here.</Text>
-          <Button className="mt-4">
-            <Text>Shop Now</Text>
-          </Button>
-        </CardContent>
-      </Card>
-    </View>
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
+        <div className="grid md:grid-cols-3 gap-12">
+          {badges.map((badge, index) => (
+            <div key={index} className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sage/20 mb-6">
+                <badge.icon className="h-8 w-8 text-sage" />
+              </div>
+              <h3 className="font-serif text-xl mb-3">{badge.title}</h3>
+              <p className="text-muted-foreground">{badge.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 ```
 
-## Best Practices
+### Footer
 
-1. **Always use semantic colors** - Use `primary`, `secondary`, `muted` instead of raw colors
-2. **Leverage CSS variables** - All colors should go through CSS variables for easy theming
-3. **Test both themes** - Always verify components in light and dark mode
-4. **Keep accessibility in mind** - Ensure contrast ratios meet WCAG standards
-5. **Use Tailwind classes** - Avoid inline styles, use Tailwind utilities
-6. **Copy components locally** - shadcn/ui is meant to be copied, not imported from a package
+```tsx
+// components/footer.tsx
+import Link from 'next/link'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
-## Useful Commands
+export function Footer() {
+  return (
+    <footer className="bg-white border-t border-border">
+      <div className="container py-16">
+        <div className="grid gap-12 md:grid-cols-4">
+          {/* About */}
+          <div>
+            <h4 className="font-medium mb-4">About</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              At ZenSkin, we believe that true beauty is achieved through the
+              harmonious balance of nature and science. Premium gut-to-skin
+              wellness for radiant health.
+            </p>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h4 className="font-medium mb-4">Products</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/collections/gut-health" className="text-muted-foreground hover:text-foreground">
+                  Gut Health
+                </Link>
+              </li>
+              <li>
+                <Link href="/collections/skin-care" className="text-muted-foreground hover:text-foreground">
+                  Skin Care
+                </Link>
+              </li>
+              <li>
+                <Link href="/collections/bundles" className="text-muted-foreground hover:text-foreground">
+                  Bundles
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-medium mb-4">Contact</h4>
+            <address className="text-sm text-muted-foreground not-italic space-y-1">
+              <p>ZenSkin India Pvt. Ltd</p>
+              <p>Mumbai, Maharashtra</p>
+              <p>India</p>
+              <p className="mt-3">
+                <Link href="mailto:care@zenskin.in" className="hover:text-foreground">
+                  care@zenskin.in
+                </Link>
+              </p>
+            </address>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="font-medium mb-4">Stay in Touch</h4>
+            <p className="text-sm text-muted-foreground mb-4">
+              Subscribe for exclusive offers and wellness tips.
+            </p>
+            <form className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Email"
+                className="flex-1"
+              />
+              <Button type="submit" variant="outline">
+                Join
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-border">
+        <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} ZenSkin. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-foreground">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+```
+
+---
+
+## Button Variants (ZenSkin Style)
+
+```tsx
+// Extend shadcn button variants in components/ui/button.tsx
+
+const buttonVariants = cva(
+  'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+  {
+    variants: {
+      variant: {
+        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        outline: 'border border-foreground bg-transparent hover:bg-foreground hover:text-background',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
+        // ZenSkin custom variants
+        gold: 'bg-[hsl(var(--gold))] text-white hover:bg-[hsl(var(--gold))]/90',
+        'outline-gold': 'border border-[hsl(var(--gold))] text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))] hover:text-white',
+      },
+      size: {
+        default: 'h-10 px-6 py-2',
+        sm: 'h-9 px-4',
+        lg: 'h-12 px-8 text-base',
+        xl: 'h-14 px-10 text-base',
+        icon: 'h-10 w-10',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  }
+)
+```
+
+---
+
+## Essential Components for ZenSkin
 
 ```bash
-# List available components
-npx shadcn@latest add --help
-
-# Update components
-npx shadcn@latest diff button
-
-# Add with custom path
-npx shadcn@latest add button --path src/components/ui
+# Install required shadcn components
+npx shadcn@latest add button card input sheet dialog \
+  dropdown-menu navigation-menu form select checkbox \
+  toast skeleton badge avatar separator scroll-area \
+  carousel tabs accordion
 ```
+
+---
+
+## Tailwind Config Extensions
+
+Add to `tailwind.config.ts`:
+
+```ts
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  // ... base config
+  theme: {
+    extend: {
+      colors: {
+        gold: 'hsl(var(--gold))',
+        'gold-light': 'hsl(var(--gold-light))',
+        sage: 'hsl(var(--sage))',
+        cream: 'hsl(var(--cream))',
+        snow: 'hsl(var(--snow))',
+      },
+      fontFamily: {
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+        serif: ['Amiri', 'Times New Roman', 'serif'],
+      },
+      fontSize: {
+        'hero': ['2.9rem', { lineHeight: '1.2' }],
+        'section': ['2rem', { lineHeight: '1.2' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+    },
+  },
+}
+```
+
+---
 
 ## Resources
 
 - shadcn/ui Docs: https://ui.shadcn.com
 - tweakcn Theme Editor: https://tweakcn.com
-- react-native-reusables: https://rnr-docs.vercel.app
-- Radix UI Primitives: https://radix-ui.com
+- ZenSkin.com Reference: https://zenskin.com
+- Figtree Font: https://fonts.google.com/specimen/Figtree
+- Amiri Font: https://fonts.google.com/specimen/Amiri

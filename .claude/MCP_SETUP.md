@@ -285,3 +285,81 @@ Run before starting Claude Code:
 - **API Key**: `sk_live_skillsmp_i9AIWC0alNkSmWW_-mFXGC-2EwvKu8D-k-dllw19Z4o`
 
 **IMPORTANT**: Never commit actual credentials to git. Use environment variables!
+
+---
+
+## Design System Integration
+
+The MCP servers work together with the ZenSkin design system for efficient development.
+
+### Using shadcn-ui MCP for Components
+
+When building UI, the shadcn-ui MCP can help scaffold components that match our design system:
+
+```
+Request: "Create a product card component following ZenSkin design"
+```
+
+The MCP will reference:
+- `.claude/skills/shadcn-ui.md` - Component patterns and theming
+- `.claude/skills/design-system.md` - Color palette, typography, spacing
+- `tailwind.config.ts` - Configured design tokens
+
+### Design Token Quick Reference
+
+**Colors** (use these Tailwind classes):
+```
+Backgrounds: bg-white, bg-snow, bg-cream, bg-soft-gray
+Text: text-rich-black, text-medium-gray, text-muted-gray
+Accent: bg-gold, text-gold, border-gold
+Wellness: bg-sage, text-sage
+```
+
+**Typography**:
+```
+Headlines: font-serif text-hero (or text-section)
+Body: font-sans text-body
+Navigation: text-nav uppercase tracking-wider
+```
+
+**Spacing** (section padding):
+```
+Desktop: py-24 (96px)
+Mobile: py-16 (64px)
+```
+
+### Using Playwright MCP for Design Testing
+
+Test responsive design across breakpoints:
+
+```javascript
+// Test mobile view
+browser_resize({ width: 375, height: 667 })
+browser_take_screenshot({ filename: 'mobile-home.png' })
+
+// Test tablet view
+browser_resize({ width: 768, height: 1024 })
+browser_take_screenshot({ filename: 'tablet-home.png' })
+
+// Test desktop view
+browser_resize({ width: 1440, height: 900 })
+browser_take_screenshot({ filename: 'desktop-home.png' })
+```
+
+### Recommended Workflow
+
+1. **Plan Component** - Reference design-system.md for specs
+2. **Generate with shadcn-ui** - Use MCP to scaffold
+3. **Style with Tailwind** - Apply ZenSkin tokens from tailwind.config.ts
+4. **Test with Playwright** - Verify responsive behavior
+5. **Commit with GitHub** - Push and create PR
+
+### Skills Available for Design
+
+| Skill | Purpose |
+|-------|---------|
+| `shadcn-ui.md` | Component patterns, CSS variables, theming |
+| `design-system.md` | Colors, typography, spacing, guidelines |
+| `ui-ux-design.md` | E-commerce UX patterns |
+| `responsive-component.md` | Multi-device responsive patterns |
+| `webapp-testing.md` | Browser testing workflows |
