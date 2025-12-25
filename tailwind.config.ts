@@ -1,13 +1,13 @@
 import type { Config } from 'tailwindcss'
 
 /**
- * ZenSkin.in Design System - Tailwind Configuration
+ * SKÖN24 Design System - Tailwind Configuration
  *
- * Premium Korean Skincare Aesthetic
- * Based on ZenSkin.com design analysis
+ * Premium Scandinavian Skincare Aesthetic
+ * Brand: SKÖN24 | Tagline: välmående (well-being)
  *
- * Color Philosophy: White/Snow-White/Cream/Gray
- * Typography: Figtree (body) + Amiri (headlines)
+ * Color Philosophy: Warm Beige/Cream with Amber Gold accents
+ * Typography: Clean geometric sans-serif
  *
  * Supports responsive design across:
  * - Mobile phones (320px - 430px)
@@ -42,23 +42,22 @@ const config: Config = {
         md: '768px',
         lg: '1024px',
         xl: '1280px',
-        '2xl': '1440px', // Max container width
+        '2xl': '1440px',
       },
     },
     screens: {
-      // Mobile-first breakpoints
-      'xs': '375px',     // iPhone SE, small Android
-      'sm': '640px',     // Large phones
-      'md': '768px',     // Tablets (portrait)
-      'lg': '1024px',    // Tablets (landscape), small laptops
-      'xl': '1280px',    // Desktops
-      '2xl': '1536px',   // Large desktops
-      '3xl': '1920px',   // Full HD monitors
-      '4k': '2560px',    // 4K monitors
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      '3xl': '1920px',
+      '4k': '2560px',
     },
     extend: {
       // ============================================
-      // ZenSkin Color System
+      // SKÖN24 Color System
       // ============================================
       colors: {
         // CSS Variable-based colors (for shadcn/ui)
@@ -97,76 +96,108 @@ const config: Config = {
         },
 
         // ============================================
-        // ZenSkin Brand Colors (Direct access)
+        // SKÖN24 Brand Colors (Direct access)
         // ============================================
 
-        // Primary Backgrounds
-        'pure-white': '#FFFFFF',
-        'snow': '#F7F9FA',
-        'cream': '#FFFCF7',
-        'light-gray': '#F0F0F0',
-        'soft-gray': '#E8E8E8',
+        // Primary - Amber/Gold (from product packaging)
+        'amber': {
+          DEFAULT: '#C5963A',
+          50: '#FCF7EF',
+          100: '#F7ECDA',
+          200: '#EFD5B0',
+          300: '#E4BA7D',
+          400: '#D9A456',
+          500: '#C5963A',  // Main brand amber
+          600: '#A67A2E',
+          700: '#875F24',
+          800: '#6D4C1E',
+          900: '#5A3F1A',
+          950: '#332210',
+        },
+
+        // Background - Warm Beige/Cream (from product image background)
+        'beige': {
+          DEFAULT: '#E8E2DA',
+          50: '#FDFCFB',
+          100: '#F7F5F2',
+          200: '#F0EBE5',
+          300: '#E8E2DA',  // Main background
+          400: '#D8CFC3',
+          500: '#C4B8A8',
+          600: '#A89A87',
+          700: '#8C7D6A',
+          800: '#706454',
+          900: '#5A5044',
+          950: '#2F2A23',
+        },
+
+        // Product White - Frosted white (packaging color)
+        'frost': {
+          DEFAULT: '#F5F3F0',
+          50: '#FFFFFF',
+          100: '#FDFCFB',
+          200: '#F9F7F5',
+          300: '#F5F3F0',  // Main frost white
+          400: '#E8E4DE',
+          500: '#D4CEC5',
+          600: '#B8B0A4',
+          700: '#9A9186',
+          800: '#7D756B',
+          900: '#655E56',
+        },
 
         // Text Colors
-        'rich-black': '#212121',
-        'pure-black': '#000000',
-        'medium-gray': '#646464',
-        'muted-gray': '#9A9A9A',
-
-        // Accent Colors
-        'gold': {
-          DEFAULT: '#AB8C52',
-          light: 'rgba(171, 140, 82, 0.05)',
-          dark: '#8B7142',
+        'charcoal': '#2D2D2D',
+        'slate': '#4A4A4A',
+        'gray': {
+          DEFAULT: '#8A8A8A',
+          light: '#B0B0B0',
+          dark: '#5A5A5A',
         },
-        'sage': {
-          DEFAULT: '#B5CAAC',
-          light: 'rgba(181, 202, 172, 0.2)',
-          dark: '#95AA8C',
-        },
-        'soft-pink': '#F9DEE5',
-        'warm-peach': '#FFF0DB',
 
         // Semantic
-        'success': '#B5CAAC',
-        'error': '#D20000',
-        'warning': '#AB8C52',
+        'success': '#7BA05B',
+        'error': '#C54B4B',
+        'warning': '#C5963A',
+        'info': '#5B8BA0',
       },
 
       // ============================================
       // Typography
       // ============================================
       fontFamily: {
-        sans: ['Figtree', 'system-ui', 'sans-serif'],
-        serif: ['Amiri', 'Times New Roman', 'serif'],
-        display: ['GT Standard', 'Figtree', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'sans-serif'],
+        logo: ['Bebas Neue', 'Impact', 'sans-serif'],
       },
       fontSize: {
-        // ZenSkin Typography Scale
-        'hero': ['2.9rem', { lineHeight: '1.2', fontWeight: '400' }],
-        'section': ['2rem', { lineHeight: '1.2', fontWeight: '400' }],
-        'subheading': ['1.375rem', { lineHeight: '1.4', fontWeight: '500' }],
-        'body-lg': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
-        'body': ['0.9375rem', { lineHeight: '1.6', fontWeight: '400' }],
-        'small': ['0.8125rem', { lineHeight: '1.5', fontWeight: '400' }],
+        // SKÖN24 Typography Scale
+        'hero': ['3.5rem', { lineHeight: '1.1', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'display': ['2.5rem', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.01em' }],
+        'heading': ['2rem', { lineHeight: '1.25', fontWeight: '600' }],
+        'subheading': ['1.5rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'small': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
         'caption': ['0.75rem', { lineHeight: '1.5', fontWeight: '400' }],
-        'nav': ['0.8125rem', { lineHeight: '1', fontWeight: '500', letterSpacing: '0.05em' }],
+        'nav': ['0.875rem', { lineHeight: '1', fontWeight: '500', letterSpacing: '0.05em' }],
       },
       letterSpacing: {
+        'tighter': '-0.02em',
+        'tight': '-0.01em',
         'wide': '0.025em',
         'wider': '0.05em',
         'widest': '0.1em',
       },
 
       // ============================================
-      // Spacing (4px grid system)
+      // Spacing
       // ============================================
       spacing: {
-        '18': '4.5rem',   // 72px
-        '22': '5.5rem',   // 88px
-        '30': '7.5rem',   // 120px
-        '34': '8.5rem',   // 136px
-        // Safe area insets for mobile
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
+        '34': '8.5rem',
         'safe-top': 'env(safe-area-inset-top)',
         'safe-bottom': 'env(safe-area-inset-bottom)',
         'safe-left': 'env(safe-area-inset-left)',
@@ -188,21 +219,24 @@ const config: Config = {
       // Shadows
       // ============================================
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'card': '0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05)',
-        'elevated': '0 10px 40px -10px rgba(0, 0, 0, 0.15)',
-        'gold': '0 4px 14px 0 rgba(171, 140, 82, 0.25)',
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.05), 0 10px 20px -2px rgba(0, 0, 0, 0.03)',
+        'card': '0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.04)',
+        'elevated': '0 10px 40px -10px rgba(0, 0, 0, 0.1)',
+        'amber': '0 4px 14px 0 rgba(197, 150, 58, 0.2)',
+        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.03)',
       },
 
       // ============================================
       // Animations
       // ============================================
       animation: {
-        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'fade-in': 'fadeIn 0.3s ease-out',
         'fade-in-up': 'fadeInUp 0.5s ease-out',
+        'fade-in-down': 'fadeInDown 0.5s ease-out',
         'slide-up': 'slideUp 0.3s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
-        'pulse-soft': 'pulseSoft 2s infinite',
+        'scale-in': 'scaleIn 0.2s ease-out',
+        'spin-slow': 'spin 3s linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
@@ -215,6 +249,10 @@ const config: Config = {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
         slideUp: {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
@@ -223,9 +261,9 @@ const config: Config = {
           '0%': { transform: 'translateY(-10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        pulseSoft: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.7' },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
         'accordion-down': {
           from: { height: '0' },
@@ -238,24 +276,24 @@ const config: Config = {
       },
 
       // ============================================
-      // Transitions
+      // Background Images
       // ============================================
-      transitionDuration: {
-        '400': '400ms',
-        '500': '500ms',
-      },
-      transitionTimingFunction: {
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-beige': 'linear-gradient(180deg, #F7F5F2 0%, #E8E2DA 100%)',
+        'gradient-frost': 'linear-gradient(180deg, #FFFFFF 0%, #F5F3F0 100%)',
+        'gradient-amber': 'linear-gradient(135deg, #D9A456 0%, #C5963A 50%, #A67A2E 100%)',
       },
 
       // ============================================
       // Aspect Ratios
       // ============================================
       aspectRatio: {
-        'product': '1 / 1',        // Square product images
-        'hero': '16 / 9',          // Hero banners
-        'portrait': '3 / 4',       // Product lifestyle
-        'wide': '21 / 9',          // Wide banners
+        'product': '3 / 4',
+        'hero': '16 / 9',
+        'square': '1 / 1',
+        'wide': '21 / 9',
+        'portrait': '2 / 3',
       },
 
       // ============================================

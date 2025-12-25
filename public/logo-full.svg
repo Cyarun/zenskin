@@ -1,0 +1,20 @@
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- SKÖN24 Full Logo with tagline -->
+  <defs>
+    <linearGradient id="amberGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D9A456"/>
+      <stop offset="50%" style="stop-color:#C5963A"/>
+      <stop offset="100%" style="stop-color:#A67A2E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main Logo Text: SKÖN -->
+  <text x="0" y="36" font-family="system-ui, -apple-system, Arial Black, sans-serif" font-weight="900" font-size="36" fill="url(#amberGold)" letter-spacing="2">SKÖN</text>
+
+  <!-- 24 Badge -->
+  <rect x="108" y="10" width="40" height="32" rx="2" fill="url(#amberGold)"/>
+  <text x="114" y="35" font-family="system-ui, -apple-system, Arial Black, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF">24</text>
+
+  <!-- Tagline: välmående -->
+  <text x="0" y="54" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#8A8A8A" letter-spacing="1">välmående</text>
+</svg>

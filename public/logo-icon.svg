@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- SKÖN24 Icon Logo - Compact version -->
+  <defs>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D9A456"/>
+      <stop offset="50%" style="stop-color:#C5963A"/>
+      <stop offset="100%" style="stop-color:#A67A2E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="24" fill="#F5F3F0"/>
+
+  <!-- S24 compact logo -->
+  <text x="8" y="32" font-family="system-ui, -apple-system, Arial Black, sans-serif" font-weight="900" font-size="18" fill="url(#amber)">S</text>
+  <text x="20" y="32" font-family="system-ui, -apple-system, Arial Black, sans-serif" font-weight="900" font-size="14" fill="url(#amber)">24</text>
+</svg>
